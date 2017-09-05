@@ -1,6 +1,6 @@
 {
   "name": "combinator_of_difference",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "The utility for finding differences in configuration files and creating 'patches'",
   "main": "index.js",
   "bin": {
@@ -29,5 +29,13 @@
   },
   "dependencies": {
     "commander": "^2.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrammPozitiva/project-lvl2-s121.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GrammPozitiva/project-lvl2-s121/issues"
+  },
+  "homepage": "https://github.com/GrammPozitiva/project-lvl2-s121#readme"
 }
