@@ -16,7 +16,7 @@
   "author": "Tatiana Shevchenko",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "*",
+    "babel-cli": "^6.26.0",
     "babel-core": "*",
     "babel-eslint": "*",
     "babel-preset-env": "*",
