@@ -1,6 +1,6 @@
 {
   "name": "combinator_of_difference",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The utility for finding differences in configuration files and creating 'patches'",
   "main": "index.js",
   "bin": {
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "commander": "^2.11.0",
+    "js-yaml": "^3.9.1",
     "lodash": "^4.17.4"
   },
   "repository": {

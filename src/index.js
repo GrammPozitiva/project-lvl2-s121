@@ -1,10 +1,12 @@
 import _ from 'lodash';
-import getFileData from './filesystem';
+import parse from './parser';
 
 const genDiff = (fileOne, fileTwo) => {
-  const fileBefore = JSON.parse(getFileData(fileOne));
-  const fileAfter = JSON.parse(getFileData(fileTwo));
+  const fileBefore = parse(fileOne);
+  const fileAfter = parse(fileTwo);
+
   const keys = _.union(Object.keys(fileBefore), Object.keys(fileAfter));
+
   const result = keys.reduce((acc, key) => {
     if (fileBefore[key] === fileAfter[key]) {
       return acc.concat(` ${key}: ${fileBefore[key]}`);

@@ -13,3 +13,8 @@ test('compares of JSON format difference',() => {
   const fileTwo = 'test/simple/after.json';
   expect(genDiff(fileOne, fileTwo)).toBe(flatExpected);
 });
+test('compares of YAML format difference',() => {
+  const fileOne = 'test/simple/before.yml';
+  const fileTwo = 'test/simple/after.yml';
+  expect(genDiff(fileOne, fileTwo)).toBe(flatExpected);
+});
