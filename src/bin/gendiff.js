@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import run from '../referenceGendiff';
+import run from '../command';
 
 run();
