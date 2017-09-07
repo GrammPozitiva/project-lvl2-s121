@@ -1,11 +1,14 @@
 {
   "name": "combinator_of_difference",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "The utility for finding differences in configuration files and creating 'patches'",
-  "main": "index.js",
+  "main": "dist/bin/gendiff.js",
   "bin": {
-    "gendiff": "dist/bin/gendiff.js"
+    "gendiff": "dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "babel-node": "babel-node",
@@ -19,7 +22,9 @@
     "babel-cli": "^6.26.0",
     "babel-core": "*",
     "babel-eslint": "*",
+    "babel-jest": "^21.0.0",
     "babel-preset-env": "*",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "*",
     "eslint": "*",
     "eslint-config-airbnb-base": "*",

@@ -2,8 +2,8 @@ import yaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
 
-const parse = (file) => {
-  switch(path.extname(file)){
+const parseFromFile = (file) => {
+  switch (path.extname(file)) {
     case '.yml': return yaml.load(fs.readFileSync(file, 'utf-8'));
 
     case '.json': return JSON.parse(fs.readFileSync(file, 'utf-8'));
@@ -12,4 +12,4 @@ const parse = (file) => {
   }
 };
 
-export default parse;
+export default parseFromFile;

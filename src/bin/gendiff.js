@@ -1,5 +1,17 @@
 #!/usr/bin/env node
 
-import run from '../command';
+import program from 'commander';
+import packjson from '../../package.json';
+import genDiff from '../index';
 
-run();
+program
+  .version(packjson.version)
+  .option('-f, --format [type]', 'Output format')
+  .arguments('<firstConfig> <secondConfig>')
+  .description(packjson.description)
+  .action((firstConfig, secondConfig) => {
+    const diff = genDiff(firstConfig, secondConfig);
+    console.log(diff);
+  });
+
+program.parse(process.argv);
