@@ -18,3 +18,8 @@ test('compares of YAML format difference',() => {
   const fileTwo = 'test/simple/after.yml';
   expect(genDiff(fileOne, fileTwo)).toBe(flatExpected);
 });
+test('compares of INI format difference',() => {
+  const fileOne = 'test/simple/before.ini';
+  const fileTwo = 'test/simple/after.ini';
+  expect(genDiff(fileOne, fileTwo)).toBe(flatExpected);
+});
