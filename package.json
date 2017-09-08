@@ -1,6 +1,6 @@
 {
   "name": "combinator_of_difference",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "The utility for finding differences in configuration files and creating 'patches'",
   "main": "dist/index.js",
   "bin": {

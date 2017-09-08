@@ -1,34 +1,21 @@
+import fs from 'fs';
+import path from 'path';
 import _ from 'lodash';
-import parseFromFile from './parser';
+import difference from './difference';
+import parse from './parser';
 
-const difference = (objBefore, objAfter) => {
-  const keys = _.union(Object.keys(objBefore), Object.keys(objAfter));
-  const result = keys.reduce((acc, key) => {
-    if (objBefore[key] === objAfter[key]) {
-      return acc.concat(` ${key}: ${objBefore[key]}`);
-    }
-    if (_.has(objAfter, key) && _.has(objBefore, key)) {
-      return acc.concat(`  + ${key}: ${objAfter[key]}`, `  - ${key}: ${objBefore[key]}`);
-    }
-    if (_.has(objAfter, key)) {
-      return acc.concat(`  + ${key}: ${objAfter[key]}`);
-    }
-    if (_.has(objBefore, key)) {
-      return acc.concat(`  - ${key}: ${objBefore[key]}`);
-    }
 
-    return acc;
-  }, []).join('\n');
-
-  return `{
-   ${result}
-}`;
+const getTypeFromPath = (pathFile) => {
+  const typePath = path.extname(pathFile);
+  return _.trim(typePath, '.');
 };
 
 const genDiff = (fileOne, fileTwo) => {
-  const fileBefore = parseFromFile(fileOne);
-  const fileAfter = parseFromFile(fileTwo);
-  return difference(fileBefore, fileAfter);
+  const dataBefore = fs.readFileSync(fileOne, 'utf-8');
+  const dataAfter = fs.readFileSync(fileTwo, 'utf-8');
+  const objBefore = parse(getTypeFromPath(fileOne), dataBefore);
+  const objAfter = parse(getTypeFromPath(fileTwo), dataAfter);
+  return difference(objBefore, objAfter);
 };
 
 export default genDiff;

@@ -2,7 +2,7 @@
 
 import program from 'commander';
 import packjson from '../../package.json';
-import genDiff from '../index';
+import genDiff from '..';
 
 program
   .version(packjson.version)
